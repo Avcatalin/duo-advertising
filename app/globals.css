@@ -356,6 +356,11 @@ a {
   color: var(--fg);
 }
 
+.nav-link:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
 .nav-link.is-active {
   color: var(--fg);
 }
@@ -397,6 +402,11 @@ a {
 
 .btn:active {
   transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -534,7 +544,7 @@ a {
   }
 }
 
-.footer-col h5 {
+.footer-col h3 {
   font-family: var(--font-geist-mono), monospace;
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -769,7 +779,8 @@ a {
   font-family: var(--font-geist), sans-serif;
   font-size: 17px;
   color: var(--fg);
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
   width: 100%;
   letter-spacing: -0.01em;
   transition: border-color 0.2s var(--ease);
@@ -780,6 +791,12 @@ a {
 .field textarea:focus,
 .field select:focus {
   border-color: var(--orange);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  outline-color: var(--orange);
 }
 
 .field textarea {
@@ -1438,9 +1455,14 @@ a {
   line-height: 1.55;
   color: var(--fg);
   resize: vertical;
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
   min-height: 220px;
   letter-spacing: -0.005em;
+}
+
+.prompt-input:focus-visible {
+  outline-color: var(--orange);
 }
 
 .prompt-foot {

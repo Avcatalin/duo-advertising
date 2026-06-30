@@ -216,7 +216,8 @@ export default function HomePage() {
                 href={p.href}
                 className="card-work home-work-card reveal"
                 data-delay={String(Math.min(i, 3))}
-                target='_blank'
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="home-work-thumb">
                   <Image src={p.image} alt={p.title} fill style={{ objectFit: 'cover', objectPosition: 'left' }} sizes="(max-width: 768px) 100vw, 50vw" priority={i === 0} />

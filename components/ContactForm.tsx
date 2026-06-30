@@ -99,7 +99,7 @@ export default function ContactForm() {
       </div>
 
       {submitted ? (
-        <div className="form-success">
+        <div className="form-success" role="status" aria-live="polite">
           <div className="success-mark">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
               <circle cx="24" cy="24" r="22" stroke="var(--orange)" strokeWidth="1.5" />

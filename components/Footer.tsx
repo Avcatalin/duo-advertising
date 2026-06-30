@@ -29,13 +29,13 @@ export default function Footer({
 
         <div className="footer-cols">
           <div className="footer-col">
-            <h5>Duo Advertising</h5>
+            <h3>Duo Advertising</h3>
             <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '32ch', fontSize: '14px' }}>
               Web and HubSpot agency based in Bucharest, Romania. Working worldwide since 2015.
             </p>
           </div>
           <div className="footer-col">
-            <h5>Site</h5>
+            <h3>Site</h3>
             <ul>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/services">Services</Link></li>
@@ -44,7 +44,7 @@ export default function Footer({
             </ul>
           </div>
           <div className="footer-col">
-            <h5>Contact</h5>
+            <h3>Contact</h3>
             <ul>
               <li><a href="mailto:contact@duoadv.ro">contact@duoadv.com</a></li>
               <li><a href="tel:+40771190628">+40 771 190 628</a></li>
@@ -52,9 +52,9 @@ export default function Footer({
             </ul>
           </div>
           <div className="footer-col">
-            <h5>Elsewhere</h5>
+            <h3>Elsewhere</h3>
             <ul>
-              <li><a href="https://linkedin.com/company/duoadv/" target="_blank">LinkedIn ↗</a></li>
+              <li><a href="https://linkedin.com/company/duoadv/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
             </ul>
           </div>
         </div>

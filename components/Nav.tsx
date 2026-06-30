@@ -58,6 +58,7 @@ export default function Nav() {
                 key={href}
                 href={href}
                 className={`nav-link${pathname === href ? ' is-active' : ''}`}
+                aria-current={pathname === href ? 'page' : undefined}
               >
                 {label}
               </Link>
@@ -99,6 +100,7 @@ export default function Nav() {
               key={href}
               href={href}
               className={`nav-mobile-link${pathname === href ? ' is-active' : ''}`}
+              aria-current={pathname === href ? 'page' : undefined}
               onClick={() => setIsOpen(false)}
             >
               {label}

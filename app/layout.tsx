@@ -7,8 +7,8 @@ import CookieBanner from '@/components/CookieBanner';
 import BackToTop from '@/components/BackToTop';
 import { GoogleTagManager } from '@next/third-parties/google';
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' });
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'optional' });
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'optional' });
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className="grain" />
         <Nav />
-        {children}
+        <main>{children}</main>
         <RevealInit />
         <CookieBanner />
         <BackToTop />
