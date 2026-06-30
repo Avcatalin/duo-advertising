@@ -32,7 +32,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="muted" style={{ marginBottom: '64px' }}>
               We process personal data in accordance with the General Data Protection Regulation
-              (EU) 2016/679, also known as GDPR, and other applicable data protection laws.
+              (EU) 2016/679 (GDPR) and Romanian Law no. 190/2018 on measures for the implementation
+              of Regulation (EU) 2016/679, as well as other applicable data protection and privacy laws.
             </p>
 
             {/* 1 */}
@@ -46,11 +47,20 @@ export default function PrivacyPolicyPage() {
               <li>VAT no.: RO34166750</li>
               <li>Registered address: Strada Tănase Dumitrescu nr. 13, Sector 2, Bucharest, Romania</li>
               <li>Phone: <a href="tel:+40771190628" style={{ color: 'var(--fg)' }}>+40 771 190 628</a></li>
-              <li>Email: <a href="mailto:contact@duoadv.ro" style={{ color: 'var(--fg)' }}>contact@duoadv.ro</a></li>
+              <li>Email: <a href="mailto:contact@duoadv.com" style={{ color: 'var(--fg)' }}>contact@duoadv.com</a></li>
             </ul>
 
             {/* 2 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>2. What Personal Data We Collect</h2>
+            <h2 className="h2" style={{ marginBottom: '24px' }}>2. Data Protection Officer</h2>
+            <p className="muted" style={{ marginBottom: '64px' }}>
+              Based on the nature and scale of our data processing activities, we are not required to
+              appoint a Data Protection Officer under Article 37 GDPR and Romanian Law no. 190/2018.
+              For any questions or concerns regarding the processing of your personal data, please
+              contact us directly using the details provided in Section 1.
+            </p>
+
+            {/* 3 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>3. What Personal Data We Collect</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
               Depending on how you interact with us, we may collect the following types of personal data:
             </p>
@@ -65,8 +75,8 @@ export default function PrivacyPolicyPage() {
               We do not intentionally collect sensitive personal data through our website.
             </p>
 
-            {/* 3 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>3. How We Collect Personal Data</h2>
+            {/* 4 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>4. How We Collect Personal Data</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
               We may collect personal data directly from you when you:
             </p>
@@ -82,32 +92,50 @@ export default function PrivacyPolicyPage() {
               hosting logs, and website security systems.
             </p>
 
-            {/* 4 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>4. Why We Use Your Personal Data</h2>
-            <p className="muted" style={{ marginBottom: '16px' }}>
-              We use personal data for the following purposes:
-            </p>
-            <ul className="muted" style={{ paddingLeft: '24px', marginBottom: '64px', lineHeight: '2' }}>
-              <li>to respond to your inquiries and messages;</li>
-              <li>to provide information about our web design, web development, eCommerce, HubSpot CRM, HubSpot CMS, and digital services;</li>
-              <li>to prepare proposals, estimates, contracts, and project documentation;</li>
-              <li>to deliver and manage services requested by you or your company;</li>
-              <li>to communicate about ongoing projects, support, updates, and administrative matters;</li>
-              <li>to improve our website, services, user experience, and marketing communication;</li>
-              <li>to protect the security and proper functioning of our website;</li>
-              <li>to comply with legal, accounting, tax, and contractual obligations.</li>
-            </ul>
-
             {/* 5 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>5. Legal Basis for Processing</h2>
+            <h2 className="h2" style={{ marginBottom: '24px' }}>5. Why We Use Your Personal Data and Legal Basis</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
-              We process personal data based on one or more of the following legal grounds:
+              We process personal data only where we have a lawful basis to do so under GDPR Art. 6.
+              The table below maps each purpose to the applicable legal ground:
             </p>
             <ul className="muted" style={{ paddingLeft: '24px', marginBottom: '64px', lineHeight: '2' }}>
-              <li><strong>Contract or pre-contractual steps</strong> — when we process your data to prepare an offer, discuss a project, sign a contract, or deliver services.</li>
-              <li><strong>Legitimate interest</strong> — when we respond to business inquiries, improve our services, secure our website, manage client relationships, or promote our services in a reasonable and non-intrusive way.</li>
-              <li><strong>Legal obligation</strong> — when we need to process and store data for accounting, tax, invoicing, or compliance purposes.</li>
-              <li><strong>Consent</strong> — when you give us permission for specific activities, such as optional cookies, newsletters, or marketing communication, where applicable. You can withdraw your consent at any time.</li>
+              <li>
+                <strong>Responding to inquiries and messages</strong> —{' '}
+                <em>Legitimate interest</em> (Art. 6(1)(f)) in managing business communications, or{' '}
+                <em>pre-contractual steps</em> (Art. 6(1)(b)) where the inquiry relates to a specific project.
+              </li>
+              <li>
+                <strong>Preparing proposals, estimates, contracts, and project documentation</strong> —{' '}
+                <em>Pre-contractual or contractual steps</em> (Art. 6(1)(b)).
+              </li>
+              <li>
+                <strong>Delivering and managing services</strong> —{' '}
+                <em>Contract performance</em> (Art. 6(1)(b)).
+              </li>
+              <li>
+                <strong>Communication about ongoing projects, support, and administrative matters</strong> —{' '}
+                <em>Contract performance</em> (Art. 6(1)(b)) or <em>legitimate interest</em> (Art. 6(1)(f)).
+              </li>
+              <li>
+                <strong>Accounting, invoicing, and tax obligations</strong> —{' '}
+                <em>Legal obligation</em> (Art. 6(1)(c)), including Law no. 82/1991 on accounting
+                and the Fiscal Procedure Code.
+              </li>
+              <li>
+                <strong>Protecting the security and proper functioning of our website</strong> —{' '}
+                <em>Legitimate interest</em> (Art. 6(1)(f)) in maintaining a secure online presence.
+              </li>
+              <li>
+                <strong>Improving our website, services, and user experience</strong> —{' '}
+                <em>Legitimate interest</em> (Art. 6(1)(f)), or <em>consent</em> (Art. 6(1)(a))
+                where analytics or tracking tools require it.
+              </li>
+              <li>
+                <strong>Marketing communication, newsletters, and promotional activities</strong> —{' '}
+                <em>Consent</em> (Art. 6(1)(a)) for individuals; <em>legitimate interest</em>{' '}
+                (Art. 6(1)(f)) may apply in a B2B context where permitted. You may withdraw consent
+                or object to legitimate-interest processing at any time.
+              </li>
             </ul>
 
             {/* 6 */}
@@ -124,7 +152,7 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p className="muted" style={{ marginBottom: '64px' }}>
               You can manage or disable cookies through your browser settings or through the cookie
-              consent banner, if available on the website. A separate{' '}
+              consent banner on the website. A separate{' '}
               <a href="/cookie-policy" style={{ color: 'var(--fg)' }}>Cookie Policy</a> provides
               more detailed information about the cookies we use.
             </p>
@@ -133,13 +161,40 @@ export default function PrivacyPolicyPage() {
             <h2 className="h2" style={{ marginBottom: '24px' }}>7. How Long We Keep Your Data</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
               We keep personal data only for as long as necessary for the purposes described in this
-              Privacy Policy. In general:
+              Privacy Policy. Specific retention periods are as follows:
             </p>
             <ul className="muted" style={{ paddingLeft: '24px', marginBottom: '16px', lineHeight: '2' }}>
-              <li>contact form and inquiry data may be kept for the time needed to respond and manage potential business opportunities;</li>
-              <li>client and project data may be kept for the duration of the collaboration and afterwards as needed for legal, contractual, or legitimate business purposes;</li>
-              <li>accounting and invoicing data is kept according to applicable Romanian legal requirements;</li>
-              <li>technical logs are kept for a limited period necessary for security and website maintenance.</li>
+              <li>
+                <strong>Contact form and inquiry data</strong> — up to 3 years from the date of
+                last contact, in line with the general civil prescription period under Art. 2517
+                of the Romanian Civil Code.
+              </li>
+              <li>
+                <strong>Client and project data</strong> — for the duration of the collaboration
+                and for up to 3 years after its conclusion, for legitimate business, contractual,
+                or legal purposes.
+              </li>
+              <li>
+                <strong>Accounting registers and financial statements</strong> — 10 years from the
+                end of the financial year, in accordance with Art. 25 of Law no. 82/1991.
+              </li>
+              <li>
+                <strong>Supporting accounting documents (invoices, receipts)</strong> — minimum
+                5 years from the end of the financial year to which they relate, in accordance with
+                Art. 25 of Law no. 82/1991 and the Fiscal Procedure Code.
+              </li>
+              <li>
+                <strong>Tax-relevant records</strong> — 5 years from the date the corresponding
+                tax obligation arose, in accordance with the Romanian Fiscal Procedure Code.
+              </li>
+              <li>
+                <strong>Technical and security logs</strong> — up to 12 months, as necessary for
+                website security and maintenance.
+              </li>
+              <li>
+                <strong>Consent records</strong> — for as long as the consent remains relevant,
+                or for up to 3 years after the last interaction, to demonstrate compliance.
+              </li>
             </ul>
             <p className="muted" style={{ marginBottom: '64px' }}>
               When personal data is no longer needed, we will delete it, anonymize it, or securely
@@ -160,8 +215,9 @@ export default function PrivacyPolicyPage() {
               <li>public authorities, courts, or institutions when required by law.</li>
             </ul>
             <p className="muted" style={{ marginBottom: '64px' }}>
-              Any third-party service providers we work with are expected to process personal data
-              securely and only for the purposes agreed with us.
+              Where third-party service providers act as data processors on our behalf, we enter
+              into Data Processing Agreements (DPAs) in accordance with Art. 28 GDPR to ensure
+              they process personal data only for the agreed purposes and with appropriate safeguards.
             </p>
 
             {/* 9 */}
@@ -169,8 +225,8 @@ export default function PrivacyPolicyPage() {
             <p className="muted" style={{ marginBottom: '64px' }}>
               Some tools or service providers we use may process data outside the European Economic Area.
               Where this happens, we take reasonable steps to ensure that appropriate safeguards are in
-              place, such as adequacy decisions, Standard Contractual Clauses, or other lawful transfer
-              mechanisms required under GDPR.
+              place, such as adequacy decisions, Standard Contractual Clauses (SCCs) under Art. 46
+              GDPR, or other lawful transfer mechanisms required under GDPR.
             </p>
 
             {/* 10 */}
@@ -185,33 +241,62 @@ export default function PrivacyPolicyPage() {
             </p>
 
             {/* 11 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>11. Your Rights Under GDPR</h2>
+            <h2 className="h2" style={{ marginBottom: '24px' }}>11. Data Breach Notification</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
-              Under GDPR, you have the following rights, where applicable:
+              In the event of a personal data breach, we will act in accordance with our obligations
+              under GDPR Art. 33–34 and Romanian Law no. 190/2018:
+            </p>
+            <ul className="muted" style={{ paddingLeft: '24px', marginBottom: '64px', lineHeight: '2' }}>
+              <li>
+                We will notify the National Supervisory Authority for Personal Data Processing
+                (ANSPDCP) within 72 hours of becoming aware of a breach that is likely to result
+                in a risk to the rights and freedoms of natural persons.
+              </li>
+              <li>
+                Where a breach is likely to result in a high risk to your rights and freedoms, we
+                will communicate it to you without undue delay, unless an exemption under Art. 34(3)
+                GDPR applies.
+              </li>
+            </ul>
+
+            {/* 12 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>12. Minors</h2>
+            <p className="muted" style={{ marginBottom: '64px' }}>
+              Our website and services are directed at businesses and adult professionals. We do not
+              knowingly collect personal data from persons under 16 years of age. Under Art. 5 of
+              Romanian Law no. 190/2018, the minimum age for valid digital consent is 16. If we
+              become aware that we have inadvertently collected personal data from a person under 16
+              without appropriate parental consent, we will delete it promptly.
+            </p>
+
+            {/* 13 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>13. Your Rights Under GDPR</h2>
+            <p className="muted" style={{ marginBottom: '16px' }}>
+              Under GDPR and Romanian Law no. 190/2018, you have the following rights, where applicable:
             </p>
             <ul className="muted" style={{ paddingLeft: '24px', marginBottom: '16px', lineHeight: '2' }}>
               <li>the right to be informed about how your personal data is processed;</li>
-              <li>the right to access your personal data;</li>
-              <li>the right to request correction of inaccurate or incomplete data;</li>
-              <li>the right to request deletion of your personal data;</li>
-              <li>the right to request restriction of processing;</li>
-              <li>the right to object to processing based on legitimate interest;</li>
-              <li>the right to data portability;</li>
-              <li>the right to withdraw consent at any time, where processing is based on consent;</li>
-              <li>the right not to be subject to decisions based solely on automated processing, including profiling, where applicable.</li>
+              <li>the right to access your personal data (Art. 15 GDPR);</li>
+              <li>the right to request correction of inaccurate or incomplete data (Art. 16 GDPR);</li>
+              <li>the right to request deletion of your personal data (Art. 17 GDPR);</li>
+              <li>the right to request restriction of processing (Art. 18 GDPR);</li>
+              <li>the right to object to processing based on legitimate interest (Art. 21 GDPR);</li>
+              <li>the right to data portability (Art. 20 GDPR);</li>
+              <li>the right to withdraw consent at any time, where processing is based on consent (Art. 7(3) GDPR);</li>
+              <li>the right not to be subject to decisions based solely on automated processing, including profiling, where applicable (Art. 22 GDPR).</li>
             </ul>
             <p className="muted" style={{ marginBottom: '64px' }}>
-              The Romanian Data Protection Authority also lists these GDPR rights, including access,
-              rectification, erasure, restriction, portability, objection, and the right to submit a complaint.
+              We do not carry out automated decision-making or profiling that produces legal or
+              similarly significant effects on data subjects.
             </p>
 
-            {/* 12 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>12. How to Exercise Your Rights</h2>
+            {/* 14 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>14. How to Exercise Your Rights</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
               To exercise your rights, you can contact us at:
             </p>
             <ul className="muted" style={{ paddingLeft: '24px', marginBottom: '16px', lineHeight: '2' }}>
-              <li>Email: <a href="mailto:contact@duoadv.ro" style={{ color: 'var(--fg)' }}>contact@duoadv.ro</a></li>
+              <li>Email: <a href="mailto:contact@duoadv.com" style={{ color: 'var(--fg)' }}>contact@duoadv.com</a></li>
               <li>Phone: <a href="tel:+40771190628" style={{ color: 'var(--fg)' }}>+40 771 190 628</a></li>
               <li>Address: Strada Tănase Dumitrescu nr. 13, Sector 2, Bucharest, Romania</li>
             </ul>
@@ -221,36 +306,38 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="muted" style={{ marginBottom: '64px' }}>
               We will respond to your request within the timeframe required by applicable law. Under
-              GDPR, controllers generally respond within one month, with possible extension by two
-              further months when necessary, depending on the complexity and number of requests.
+              GDPR Art. 12(3), controllers must respond within one month of receipt, with a possible
+              extension of two further months where necessary due to the complexity or number of requests.
             </p>
 
-            {/* 13 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>13. Right to Lodge a Complaint</h2>
+            {/* 15 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>15. Right to Lodge a Complaint</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
               If you believe that your personal data has been processed unlawfully, you have the right
               to lodge a complaint with the Romanian supervisory authority:
             </p>
             <ul className="muted" style={{ paddingLeft: '24px', marginBottom: '16px', lineHeight: '2' }}>
-              <li>The National Supervisory Authority for Personal Data Processing — ANSPDCP</li>
+              <li><strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal — ANSPDCP</strong></li>
+              <li>Address: Bulevardul General Gheorghe Magheru nr. 28–30, Sector 1, București, 010336</li>
+              <li>Email: <a href="mailto:anspdcp@dataprotection.ro" style={{ color: 'var(--fg)' }}>anspdcp@dataprotection.ro</a></li>
               <li>Website: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg)' }}>www.dataprotection.ro</a></li>
             </ul>
             <p className="muted" style={{ marginBottom: '64px' }}>
-              According to ANSPDCP, complaints may be filed in writing, in Romanian or English, and
-              may be submitted by post, email, or through the online form available on the
-              authority&apos;s website.
+              Complaints may be filed in writing, in Romanian or English, and may be submitted by
+              post, email, or through the online form available on the authority&apos;s website. You also
+              have the right to pursue judicial remedies in competent Romanian courts.
             </p>
 
-            {/* 14 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>14. Links to Other Websites</h2>
+            {/* 16 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>16. Links to Other Websites</h2>
             <p className="muted" style={{ marginBottom: '64px' }}>
               Our website may contain links to third-party websites. We are not responsible for the
               privacy practices, content, or security of those websites. We recommend reading the
               privacy policies of any external websites you visit.
             </p>
 
-            {/* 15 */}
-            <h2 className="h2" style={{ marginBottom: '24px' }}>15. Changes to This Privacy Policy</h2>
+            {/* 17 */}
+            <h2 className="h2" style={{ marginBottom: '24px' }}>17. Changes to This Privacy Policy</h2>
             <p className="muted" style={{ marginBottom: '16px' }}>
               We may update this Privacy Policy from time to time to reflect changes in our services,
               website functionality, legal requirements, or data protection practices.

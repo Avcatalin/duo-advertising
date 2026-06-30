@@ -21,14 +21,13 @@ export default function ContactPage() {
                 Let&apos;s get to the part.
               </h1>
               <p className="lead reveal" data-delay="2" style={{ marginTop: '36px' }}>
-                Tell us about your project. Form on the right, or skip the questions and
-                just describe what you&apos;re trying to build — we&apos;ll figure out the brief.
+                Tell us about your project. Fill out the form on the right, or skip the questions and just tell us what you&apos;re trying to build. We&apos;ll figure out the brief together.
               </p>
 
               <div className="reveal" data-delay="3" style={{ marginTop: '56px', display: 'flex', flexDirection: 'column', gap: '24px', paddingTop: '32px', borderTop: '1px solid var(--line)' }}>
                 <div className="contact-kv">
                   <span className="mono small muted">Email</span>
-                  <a href="mailto:contact@duoadv.ro" className="h3" style={{ fontSize: '20px' }}>contact@duoadv.ro</a>
+                  <a href="mailto:contact@duoadv.com" className="h3" style={{ fontSize: '20px' }}>contact@duoadv.com</a>
                 </div>
                 <div className="contact-kv">
                   <span className="mono small muted">Phone</span>

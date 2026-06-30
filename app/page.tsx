@@ -56,7 +56,7 @@ export default function HomePage() {
               <div style={{ fontFamily: 'var(--font-geist-mono)', fontSize: '28px', letterSpacing: '-0.02em', marginTop: '8px' }}>82<span style={{ color: 'var(--orange)' }}>+</span></div>
             </div>
             <div>
-              <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.5)' }}>Active clients</div>
+              <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.5)' }}>Clients</div>
               <div style={{ fontFamily: 'var(--font-geist-mono)', fontSize: '28px', letterSpacing: '-0.02em', marginTop: '8px' }}>60</div>
             </div>
             <div>
@@ -74,7 +74,7 @@ export default function HomePage() {
             <div className="reveal">
               <span className="eyebrow">01 / About</span>
               <h2 className="h2" style={{ marginTop: '18px' }}>
-                A focused studio<br />
+                A focused agency<br />
                 that scales with the work.
               </h2>
             </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
                 year: '2023',
                 category: 'WordPress',
                 title: 'Dental4U Clinic',
-                tags: ['WordPress'],
+                tags: ['WordPress', 'Pixeldot collaboration'],
                 image: '/images/dental-4u.jpg',
               },
               {
@@ -191,7 +191,7 @@ export default function HomePage() {
                 year: '2024',
                 category: 'Brand + Web',
                 title: 'VadiTex',
-                tags: ['WordPress', 'Brand'],
+                tags: ['WordPress', 'Brand', 'Pixeldot collaboration'],
                 image: '/images/vadi-tex-website.jpg',
               },
               {
@@ -199,7 +199,7 @@ export default function HomePage() {
                 year: '2024',
                 category: 'WordPress',
                 title: 'Marmirom',
-                tags: ['WordPress'],
+                tags: ['WordPress', 'Pixeldot collaboration'],
                 image: '/images/marmirom.jpg',
               },
               {
@@ -216,6 +216,7 @@ export default function HomePage() {
                 href={p.href}
                 className="card-work home-work-card reveal"
                 data-delay={String(Math.min(i, 3))}
+                target='_blank'
               >
                 <div className="home-work-thumb">
                   <Image src={p.image} alt={p.title} fill style={{ objectFit: 'cover', objectPosition: 'left' }} sizes="(max-width: 768px) 100vw, 50vw" />
@@ -279,7 +280,7 @@ export default function HomePage() {
             <h2 className="h2" style={{ marginTop: '18px' }}>Partners & clients.</h2>
           </div>
           <div className="clients-grid">
-            {['ApprovalMax', 'charles', 'DataArt', 'SAP', 'EvoAds', 'Confident', 'PixelDot'].map((name) => (
+            {['ApprovalMax', 'charles', 'DataArt', 'Neorimia', 'EvoAds', 'Confident', 'PixelDot'].map((name) => (
               <div key={name} className="client-cell">{name}</div>
             ))}
           </div>

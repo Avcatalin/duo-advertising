@@ -75,16 +75,16 @@ export default function ContactForm() {
           <div className="form-grid-2">
             <div className="field">
               <label htmlFor="name">Your name</label>
-              <input id="name" type="text" placeholder="Ada Lovelace" required />
+              <input id="name" type="text" placeholder="First and last name" required />
             </div>
             <div className="field">
               <label htmlFor="company">Company</label>
-              <input id="company" type="text" placeholder="Company Inc." />
+              <input id="company" type="text" placeholder="Company name" />
             </div>
           </div>
           <div className="field" style={{ marginTop: '20px' }}>
             <label htmlFor="email">Work email</label>
-            <input id="email" type="email" placeholder="ada@company.com" required />
+            <input id="email" type="email" placeholder="email@company.com" required />
           </div>
 
           <div className="field" style={{ marginTop: '28px' }}>
