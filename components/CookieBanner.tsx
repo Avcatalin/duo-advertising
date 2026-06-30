@@ -3,13 +3,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-declare global {
-  interface Window {
-    dataLayer: unknown[];
-    gtag: (...args: unknown[]) => void;
-  }
-}
-
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
 
 function loadGA() {
@@ -19,10 +12,11 @@ function loadGA() {
   s.async = true;
   s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function (...args) { window.dataLayer.push(args); };
-  window.gtag('js', new Date());
-  window.gtag('config', GA_ID);
+  const w = window as unknown as { dataLayer: unknown[]; gtag: (...args: unknown[]) => void };
+  w.dataLayer = w.dataLayer || [];
+  w.gtag = function (...args) { w.dataLayer.push(args); };
+  w.gtag('js', new Date());
+  w.gtag('config', GA_ID);
 }
 
 export default function CookieBanner() {
