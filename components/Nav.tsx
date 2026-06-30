@@ -93,7 +93,7 @@ export default function Nav() {
         </div>
       </header>
 
-      <div className={`nav-mobile${isOpen ? ' is-open' : ''}`} aria-hidden={!isOpen}>
+      <div className={`nav-mobile${isOpen ? ' is-open' : ''}`} aria-hidden={!isOpen} inert={!isOpen || undefined}>
         <nav style={{ display: 'flex', flexDirection: 'column' }}>
           {links.map(({ href, label }) => (
             <Link
