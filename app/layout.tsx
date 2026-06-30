@@ -4,6 +4,7 @@ import Nav from '@/components/Nav';
 import RevealInit from '@/components/RevealInit';
 import CookieBanner from '@/components/CookieBanner';
 import BackToTop from '@/components/BackToTop';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: {
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   },
   description:
     'Duo Advertising is a web agency helping businesses design, build, and improve digital platforms that support growth. We create custom websites, eCommerce experiences, and HubSpot solutions, including CRM setup, pipeline configuration, HubSpot CMS development, custom modules, landing pages, and integrations.',
+  verification: {
+    google: process.env.GSC_VERIFICATION,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -33,6 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieBanner />
         <BackToTop />
       </body>
+      {process.env.NEXT_PUBLIC_GTM_ID && (
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+      )}
     </html>
   );
 }
