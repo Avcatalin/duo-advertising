@@ -42,7 +42,7 @@ export default function Nav() {
             </linearGradient>
             <linearGradient id="paint1_linear_37_69" x1="0" y1="17.614" x2="83.8333" y2="17.614" gradientUnits="userSpaceOnUse">
             <stop offset="0.274038"/>
-            <stop offset="1" stop-color="#FF7A59"/>
+            <stop offset="1" stopColor="#FF7A59"/>
             </linearGradient>
             <linearGradient id="paint2_linear_37_69" x1="0" y1="17.614" x2="83.8333" y2="17.614" gradientUnits="userSpaceOnUse">
             <stop offset="0.274038"/>

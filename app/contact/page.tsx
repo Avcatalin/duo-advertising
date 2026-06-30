@@ -36,8 +36,7 @@ export default function ContactPage() {
                 <div className="contact-kv">
                   <span className="mono small muted">Agency</span>
                   <div className="h3" style={{ fontSize: '20px' }}>
-                    Bucharest, RO<br />
-                    <span className="muted" style={{ fontSize: '14px', letterSpacing: 0 }}></span>
+                    Bucharest, RO
                   </div>
                 </div>
               </div>

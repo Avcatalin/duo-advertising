@@ -22,7 +22,21 @@ function Arr() {
 export default function ContactForm() {
   const [mode, setMode] = useState<'brief' | 'prompt'>('brief');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+
+  // brief fields
+  const [name, setName] = useState('');
+  const [company, setCompany] = useState('');
+  const [email, setEmail] = useState('');
+  const [budget, setBudget] = useState('');
+  const [timeline, setTimeline] = useState('');
+  const [message, setMessage] = useState('');
+
+  // prompt fields
+  const [description, setDescription] = useState('');
+  const [promptEmail, setPromptEmail] = useState('');
 
   function toggleType(type: string) {
     setSelectedTypes((prev) =>
@@ -30,9 +44,40 @@ export default function ContactForm() {
     );
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  function switchMode(next: 'brief' | 'prompt') {
+    setMode(next);
+    setSubmitted(false);
+    setError(null);
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    const payload =
+      mode === 'brief'
+        ? { mode, name, company, email, projectTypes: selectedTypes, budget, timeline, message }
+        : { mode, description, email: promptEmail };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -41,13 +86,13 @@ export default function ContactForm() {
       <div className="form-tabs">
         <button
           className={`form-tab${mode === 'brief' ? ' is-on' : ''}`}
-          onClick={() => { setMode('brief'); setSubmitted(false); }}
+          onClick={() => switchMode('brief')}
         >
           <span className="mono small">01</span> Project brief
         </button>
         <button
           className={`form-tab${mode === 'prompt' ? ' is-on' : ''}`}
-          onClick={() => { setMode('prompt'); setSubmitted(false); }}
+          onClick={() => switchMode('prompt')}
         >
           <span className="mono small">02</span> Just describe it
         </button>
@@ -64,7 +109,7 @@ export default function ContactForm() {
           <h3 className="h3" style={{ marginTop: '24px' }}>Got it.</h3>
           <p className="muted" style={{ marginTop: '8px' }}>
             We&apos;ve received your message and will respond within two hours during EET business hours.
-            In the meantime, check the{' '}
+            In the meantime, check{' '}
             <a href="/process" style={{ color: 'var(--orange)', borderBottom: '1px solid currentColor' }}>
               our process
             </a>.
@@ -75,16 +120,36 @@ export default function ContactForm() {
           <div className="form-grid-2">
             <div className="field">
               <label htmlFor="name">Your name</label>
-              <input id="name" type="text" placeholder="First and last name" required />
+              <input
+                id="name"
+                type="text"
+                placeholder="First and last name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className="field">
               <label htmlFor="company">Company</label>
-              <input id="company" type="text" placeholder="Company name" />
+              <input
+                id="company"
+                type="text"
+                placeholder="Company name"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+              />
             </div>
           </div>
           <div className="field" style={{ marginTop: '20px' }}>
             <label htmlFor="email">Work email</label>
-            <input id="email" type="email" placeholder="email@company.com" required />
+            <input
+              id="email"
+              type="email"
+              placeholder="email@company.com"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
 
           <div className="field" style={{ marginTop: '28px' }}>
@@ -106,8 +171,8 @@ export default function ContactForm() {
           <div className="form-grid-2" style={{ marginTop: '28px' }}>
             <div className="field">
               <label htmlFor="budget">Budget range</label>
-              <select id="budget">
-                <option>—</option>
+              <select id="budget" value={budget} onChange={(e) => setBudget(e.target.value)}>
+                <option value="">—</option>
                 <option>&lt; €5k</option>
                 <option>€5k – €10k</option>
                 <option>€10k – €30k</option>
@@ -117,8 +182,8 @@ export default function ContactForm() {
             </div>
             <div className="field">
               <label htmlFor="timeline">Timeline</label>
-              <select id="timeline">
-                <option>—</option>
+              <select id="timeline" value={timeline} onChange={(e) => setTimeline(e.target.value)}>
+                <option value="">—</option>
                 <option>ASAP</option>
                 <option>Within 1 month</option>
                 <option>1–3 months out</option>
@@ -134,14 +199,20 @@ export default function ContactForm() {
               id="message"
               placeholder="A few sentences is fine."
               rows={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
 
+          {error && (
+            <p style={{ marginTop: '16px', color: 'var(--orange)', fontSize: '14px' }}>{error}</p>
+          )}
+
           <div className="form-foot">
             <span className="mono small muted">— We respond within 2 hours, EET business hours.</span>
-            <button type="submit" className="btn btn-primary">
-              Send brief
-              <Arr />
+            <button type="submit" className="btn btn-primary" disabled={loading}>
+              {loading ? 'Sending…' : 'Send brief'}
+              {!loading && <Arr />}
             </button>
           </div>
         </form>
@@ -157,23 +228,36 @@ export default function ContactForm() {
               className="prompt-input"
               placeholder="e.g. We're a B2B SaaS, ~20 people, current marketing site is on Webflow but our team can't edit it. We want to move to HubSpot CMS with a proper design system, launch in 8 weeks, budget around €30k…"
               rows={10}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
             <div className="prompt-foot">
               <div className="row" style={{ gap: '8px' }}>
                 <span className="prompt-pill"><span className="mono">⏎</span> Submit</span>
                 <span className="prompt-pill"><span className="mono">⇧⏎</span> New line</span>
               </div>
-              <button type="submit" className="btn btn-primary">
-                Send
-                <Arr />
+              <button type="submit" className="btn btn-primary" disabled={loading}>
+                {loading ? 'Sending…' : 'Send'}
+                {!loading && <Arr />}
               </button>
             </div>
           </div>
 
           <div className="field" style={{ marginTop: '24px' }}>
             <label htmlFor="prompt-email">Reply to</label>
-            <input id="prompt-email" type="email" placeholder="ada@company.com" required />
+            <input
+              id="prompt-email"
+              type="email"
+              placeholder="ada@company.com"
+              required
+              value={promptEmail}
+              onChange={(e) => setPromptEmail(e.target.value)}
+            />
           </div>
+
+          {error && (
+            <p style={{ marginTop: '16px', color: 'var(--orange)', fontSize: '14px' }}>{error}</p>
+          )}
         </form>
       )}
     </div>
