@@ -219,7 +219,7 @@ export default function HomePage() {
                 target='_blank'
               >
                 <div className="home-work-thumb">
-                  <Image src={p.image} alt={p.title} fill style={{ objectFit: 'cover', objectPosition: 'left' }} sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src={p.image} alt={p.title} fill style={{ objectFit: 'cover', objectPosition: 'left' }} sizes="(max-width: 768px) 100vw, 50vw" priority={i === 0} />
                 </div>
                 <div className="cw-meta">
                   <div className="cw-row">
