@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Duo Advertising — Independent web studio',
+  title: 'Duo Advertising — Digital products, built with intention',
 };
 
 function Arr() {
