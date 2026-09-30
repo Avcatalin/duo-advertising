@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'Process' };
+export const metadata = pageMetadata('/process');
 
 function Arr() {
   return (
@@ -90,7 +90,7 @@ export default function WorkPage() {
                 <div className="tl-body">
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', flexWrap: 'wrap' }}>
                     <h3 className="h3">{name}</h3>
-                    <span className="mono small muted">// {tag}</span>
+                    <span className="mono small muted">{'// '}{tag}</span>
                   </div>
                   <p className="muted" style={{ marginTop: '10px', maxWidth: '62ch', lineHeight: '1.65', fontSize: '15px' }}>{body}</p>
                 </div>
@@ -111,7 +111,7 @@ export default function WorkPage() {
           </div>
           <div className="svc-stack" style={{ marginTop: 0, paddingTop: 0, borderTop: 0 }}>
             <div className="stack-item">
-              <span className="mono small muted reveal">// What you bring</span>
+              <span className="mono small muted reveal">{'// What you bring'}</span>
               <ul className="svc-list reveal" data-delay="1">
                 <li>Your goals and the business context behind them</li>
                 <li>Content — copy and images — or a brief so we can help source them</li>
@@ -121,7 +121,7 @@ export default function WorkPage() {
               </ul>
             </div>
             <div className="stack-item">
-              <span className="mono small muted reveal" data-delay="1">// What we take off your plate</span>
+              <span className="mono small muted reveal" data-delay="1">{'// What we take off your plate'}</span>
               <ul className="svc-list reveal" data-delay="2">
                 <li>Translating business goals into technical decisions</li>
                 <li>A design process that doesn&apos;t need a committee to move</li>

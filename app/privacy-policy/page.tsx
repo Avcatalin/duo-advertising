@@ -1,7 +1,8 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-export const metadata: Metadata = { title: 'Privacy Policy' };
+export const metadata = pageMetadata('/privacy-policy');
 
 export default function PrivacyPolicyPage() {
   return (
@@ -153,7 +154,7 @@ export default function PrivacyPolicyPage() {
             <p className="muted" style={{ marginBottom: '64px' }}>
               You can manage or disable cookies through your browser settings or through the cookie
               consent banner on the website. A separate{' '}
-              <a href="/cookie-policy" style={{ color: 'var(--fg)' }}>Cookie Policy</a> provides
+              <Link href="/cookie-policy" style={{ color: 'var(--fg)' }}>Cookie Policy</Link> provides
               more detailed information about the cookies we use.
             </p>
 

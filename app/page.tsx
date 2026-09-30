@@ -1,11 +1,9 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = {
-  title: 'Duo Advertising — Digital products, built with intention',
-};
+export const metadata = pageMetadata('/');
 
 function Arr() {
   return (
@@ -220,7 +218,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
               >
                 <div className="home-work-thumb">
-                  <Image src={p.image} alt={p.title} fill style={{ objectFit: 'cover', objectPosition: 'left' }} sizes="(max-width: 768px) 100vw, 50vw" priority={i === 0} />
+                  <Image src={p.image} alt={`${p.title} website preview`} fill style={{ objectFit: 'cover', objectPosition: 'left' }} sizes="(max-width: 768px) 100vw, 50vw" priority={i === 0} />
                 </div>
                 <div className="cw-meta">
                   <div className="cw-row">

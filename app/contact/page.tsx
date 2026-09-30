@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 
-export const metadata: Metadata = { title: 'Contact' };
+export const metadata = pageMetadata('/contact');
 
 export default function ContactPage() {
   return (

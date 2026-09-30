@@ -46,7 +46,7 @@ export default function Footer({
           <div className="footer-col">
             <h3>Contact</h3>
             <ul>
-              <li><a href="mailto:contact@duoadv.ro">contact@duoadv.com</a></li>
+              <li><a href="mailto:contact@duoadv.com">contact@duoadv.com</a></li>
               <li><a href="tel:+40771190628">+40 771 190 628</a></li>
               <li><span style={{ color: 'rgba(255,255,255,0.5)' }}>L–V · 09:00 – 18:00 EET</span></li>
             </ul>

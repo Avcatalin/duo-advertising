@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'Services' };
+export const metadata = pageMetadata('/services');
 
 function Arr() {
   return (
@@ -181,7 +181,7 @@ export default function ServicesPage() {
                       </ul>
                     </div>
                     <div className="stack-item">
-                      <span className="mono small muted">// Good fit if</span>
+                      <span className="mono small muted">{'// Good fit if'}</span>
                       <ul className="svc-list">
                         {svc.goodFit.map((item) => (
                           <li key={item}>{item}</li>
@@ -212,7 +212,7 @@ export default function ServicesPage() {
 
           <div className="combo-grid">
             <div className="combo reveal">
-              <span className="mono small text-orange">// Combo A</span>
+              <span className="mono small text-orange">{'// Combo A'}</span>
               <h3 className="h3" style={{ marginTop: '8px' }}>Website launch, end to end.</h3>
               <p style={{ color: 'var(--muted)', marginTop: '10px', marginBottom: '10px', fontSize: '14px' }}>From structure and design to development, launch, and post-launch improvements.</p>
               <div className="row" style={{ gap: '6px', marginTop: '14px' }}>
@@ -220,7 +220,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="combo reveal" data-delay="1">
-              <span className="mono small text-orange">// Combo B</span>
+              <span className="mono small text-orange">{'// Combo B'}</span>
               <h3 className="h3" style={{ marginTop: '8px' }}>eCommerce <br />launch.</h3>
               <p style={{ color: 'var(--muted)', marginTop: '10px', marginBottom: '10px', fontSize: '14px' }}>Custom WooCommerce stores designed to be easy to manage and ready to sell.</p>
               <div className="row" style={{ gap: '6px', marginTop: '14px' }}>
@@ -228,7 +228,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="combo reveal" data-delay="2">
-              <span className="mono small text-orange">// Combo C</span>
+              <span className="mono small text-orange">{'// Combo C'}</span>
               <h3 className="h3" style={{ marginTop: '8px' }}>HubSpot CRM <br />setup.</h3>
               <p style={{ color: 'var(--muted)', marginTop: '10px', marginBottom: '10px', fontSize: '14px' }}>Pipelines, properties, workflows, forms, and reporting built around your sales process.</p>
               <div className="row" style={{ gap: '6px', marginTop: '14px' }}>

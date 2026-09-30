@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'Cookie Policy' };
+export const metadata = pageMetadata('/cookie-policy');
 
 export default function CookiePolicyPage() {
   return (

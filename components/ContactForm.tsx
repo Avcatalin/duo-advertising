@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const PROJECT_TYPES = [
   'New website',
@@ -50,8 +51,9 @@ export default function ContactForm() {
     setError(null);
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (loading || !e.currentTarget.reportValidity()) return;
     setLoading(true);
     setError(null);
 
@@ -106,13 +108,13 @@ export default function ContactForm() {
               <path d="M16 24l6 6 12-14" stroke="var(--orange)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <h3 className="h3" style={{ marginTop: '24px' }}>Got it.</h3>
+          <h2 className="h3" style={{ marginTop: '24px' }}>Got it.</h2>
           <p className="muted" style={{ marginTop: '8px' }}>
             We&apos;ve received your message and will respond within two hours during EET business hours.
             In the meantime, check{' '}
-            <a href="/process" style={{ color: 'var(--orange)', borderBottom: '1px solid currentColor' }}>
+            <Link href="/process" style={{ color: 'var(--orange)', borderBottom: '1px solid currentColor' }}>
               our process
-            </a>.
+            </Link>.
           </p>
         </div>
       ) : mode === 'brief' ? (
@@ -205,7 +207,7 @@ export default function ContactForm() {
           </div>
 
           {error && (
-            <p style={{ marginTop: '16px', color: 'var(--orange)', fontSize: '14px' }}>{error}</p>
+            <p role="alert" style={{ marginTop: '16px', color: 'var(--orange)', fontSize: '14px' }}>{error}</p>
           )}
 
           <div className="form-foot">
@@ -256,7 +258,7 @@ export default function ContactForm() {
           </div>
 
           {error && (
-            <p style={{ marginTop: '16px', color: 'var(--orange)', fontSize: '14px' }}>{error}</p>
+            <p role="alert" style={{ marginTop: '16px', color: 'var(--orange)', fontSize: '14px' }}>{error}</p>
           )}
         </form>
       )}
