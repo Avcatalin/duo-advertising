@@ -68,7 +68,7 @@ export default function Footer({
                 style={{ objectFit: 'contain', height: 'auto' }}
               />
             </a>
-            <h3 style={{ marginTop: '20px' }}>Elsewhere</h3>
+            <h3 style={{ marginTop: '25px' }}>Elsewhere</h3>
             <ul>
               <li><a href="https://linkedin.com/company/duoadv/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
             </ul>
