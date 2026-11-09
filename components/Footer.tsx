@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface FooterProps {
   eyebrow?: string;
@@ -52,7 +53,22 @@ export default function Footer({
             </ul>
           </div>
           <div className="footer-col">
-            <h3>Elsewhere</h3>
+            <h3>Partners</h3>
+            <a
+              href="https://bestcrmexperts.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our partner"
+            >
+              <Image
+                src="/images/logo-BCE-white.svg"
+                alt="Partner Logo"
+                width={150}
+                height={60}
+                style={{ objectFit: 'contain', height: 'auto' }}
+              />
+            </a>
+            <h3 style={{ marginTop: '20px' }}>Elsewhere</h3>
             <ul>
               <li><a href="https://linkedin.com/company/duoadv/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
             </ul>
